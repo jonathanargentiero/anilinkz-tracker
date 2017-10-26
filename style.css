@@ -1,0 +1,310 @@
+*:focus {
+    outline: none;
+}
+
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #34495e;
+  background-color: #f6f6f6;
+  margin: 0;
+  padding: 0;
+  min-width: 270px;
+}
+
+header, footer {
+  padding: 0.5rem 1rem;
+  background-color: #f6f6f6;
+}
+
+footer {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+main {
+  padding: 0 1rem 1rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+section::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+blockquote {
+  font-weight: 600;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+h2 {
+  border-bottom: 3px solid #fb9953;
+  padding-bottom: 3px;
+}
+
+h3, h4 {
+  border-bottom: 2px solid #fb9953;
+  padding-bottom: 2px;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, strong {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+p, ul, ol {
+  font-size: 1rem;
+  list-style: none;
+  line-height: 1.6em;
+  margin: 1.2em 0 -1.2em;
+  padding: 0 0 1.2em;
+  position: relative;
+  z-index: 1;
+}
+
+p {
+    word-spacing: 0.05em;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #34495e;
+  transition: color 0.5s ease;
+}
+
+a:hover {
+  color: #fb9953;
+}
+
+img {
+  border: none;
+}
+
+.float--left {
+  float: left;
+}
+
+.float--right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.logo {
+  margin-top: 2px;
+  margin-right: 3px;
+}
+
+.link-view-all {
+  display: block;
+  float: right;
+  margin-top: 16px;
+  line-height: 32px;
+}
+
+h3 + .link-view-all, h4 + .link-view-all {
+  display: block;
+  float: right;
+  margin-top: 20px;
+  line-height: 16px;
+}
+
+.episode + .episode {
+  margin-top: 1rem;
+}
+
+.episode.episode--small {
+  margin-top: 0.5rem;
+  line-height: 1.1;
+}
+
+.episode--small .episode-series-title {
+  font-size: 0.8rem;
+  line-height: 1.1;
+}
+
+.episode-link, .episode-series-link {
+  display: inline-block;
+}
+
+.episode-link + .icon,
+.episode-series-link + .icon{
+  width: 20px;
+  height: 20px;
+  margin: 0 0.5rem;
+}
+
+.episode-title {
+  display: block;
+  line-height: 1.3;
+  margin-top: 0.1rem;
+}
+
+.episode-series-title {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.episode-date {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  opacity: 0.6;
+}
+
+.series-count {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.icon-favorite,
+.icon-seelater,
+.icon-completed,
+.icon-cancel {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+  text-indent: -9999px;
+  float: left;
+  margin: 0.3rem 0.5rem 0 0;
+}
+
+.icon-favorite:hover,
+.icon-seelater:hover,
+.icon-completed:hover {
+  opacity: 0.6;
+}
+
+.icon-favorite-active:hover,
+.icon-seelater-active:hover,
+.icon-completed-active:hover {
+  opacity: 1;
+}
+
+.icon-favorite {
+  background-image: url('icons/favorite.png');
+}
+
+.icon-seelater {
+  background-image: url('icons/seelater.png');
+}
+
+.icon-completed {
+  background-image: url('icons/completed.png');
+}
+
+.icon-cancel {
+  background-image: url('icons/cancel.png');
+}
+
+.icon-favorite:hover,
+.icon-favorite-active {
+  background-image: url('icons/favorite-active.png');
+}
+
+.icon-seelater:hover,
+.icon-seelater-active {
+  background-image: url('icons/seelater-active.png');
+}
+
+.icon-completed:hover,
+.icon-completed-active {
+  background-image: url('icons/completed-active.png');
+}
+
+.icon-cancel:hover,
+.icon-cancel-active {
+  background-image: url('icons/cancel-active.png');
+}
+
+.expand {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: right 21px;
+  background-size: 20px 20px;
+  overflow: hidden;
+  float: left;
+  padding-right: 30px;
+  background-image: url('icons/expand.png');
+}
+
+.expand:hover {
+  background-image: url('icons/expand-active.png');
+}
+
+.expand.active {
+  background-image: url('icons/collapse.png');
+  background-position: right 23px;
+}
+
+.expand.active:hover {
+  background-image: url('icons/collapse-active.png');
+}
+
+.expand + ul {
+  display: none;
+  clear: both;
+}
+
+.expand.active + ul {
+  display: block;
+}
+
+.options li {
+  margin: 1rem 0;
+}
+
+.options label {
+  display: block;
+  min-width: 255px;
+}
+
+.options p {
+  display: block;
+  line-height: 1.4;
+  margin: 0 0 0.4rem;
+  padding: 0;
+}
+
+.options input, .options textarea {
+  display: block;
+}
+
+.options textarea {
+   width: 400px;
+   min-height: 250px;
+}
+
+.options input[typ0="number"] {
+  width: 50px;
+  margin: 0;
+  padding: 2px;
+}
+
+.options .invalid {
+  border-color: red;
+  color: red;
+}
+
+.options .valid {
+  border-color: green;
+  color: green;
+}

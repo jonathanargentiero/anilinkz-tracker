@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AniLinkz Tracker options</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <picture class="logo float--left">
+      <img src="icon128.png" width="64" height="64" />
+    </picture>
+    <h1>AniLinkz Tracker</h1>
+  </header>
+  <main>
+    <section>
+      <a href="#options" class="expand active">
+        <h2 class="float--left">Options</h2>
+      </a>
+      <ul id="options" class="options">
+        <li>
+           <label>History length</label>
+           <p><small>Define the maximum number of history entries to be saved.</small></p>
+           <input type="number" name="HISTORY_LENGTH" />
+        </li>
+        <li>
+           <label>Popup recent episodes</label>
+           <p><small>Define the maximum number of history entries to be showed in the popup.</small></p>
+           <input type="number" name="POPUP_HISTORY_LENGTH" />
+        </li>
+      </ul>
+    </section>
+    <section>
+      <a href="#utilities" class="expand active">
+        <h2 class="float--left">Utilities</h2>
+      </a>
+      <ul id="utilities" class="options">
+        <li>
+           <label>Import/export saved data</label>
+           <p><small>
+             <i>WARNING: Inside this TextArea you can mess up with your the application data. Any careless modification can cause your data to be wiped out. Use CTRL+Z to recover your data from accidental erases. If you lose your data, we won't be able to recover it.</i>
+             <br/>
+             Copy, edit and paste your saved data directly in JSON format. If the data is invalid the frame will turn red. To validate the format use a <a href="https://www.google.fr/search?q=json+validator" target="_blank" rel="noopener noreferrer">JSON validator</a>.
+           </small></p>
+           <textarea id="data-export"></textarea>
+           <small id="import-result"></small>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <small>AniLinkz Tracker Chrome Extension - MIT License - 2017 - <a href="https://github.com/jonathanargentiero/anilinkz-tracker" target="_blank" rel="noopener noreferrer">Github</a></small>
+  </footer>
+  <script src="options.js"></script>
+  <script src="ga.js"></script>
+</body>
+</html>
