@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AniLinkz Tracker</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <picture class="logo float--left">
+      <img src="icon128.png" width="64" height="64" />
+    </picture>
+    <h1>AniLinkz Tracker</h1>
+  </header>
+  <main>
+    <section>
+      <a href="#recent-episodes" class="expand active">
+        <h2 class="float--left">Recent episodes</h2>
+      </a>
+      <ul id="recent-episodes"></ul>
+    </section>
+    <section>
+      <a href="#recent-series" class="expand active">
+        <h2 class="float--left">Series</h2>
+      </a>
+      <ul id="series"></ul>
+    </section>
+    <section>
+      <a href="#seelater" class="expand">
+        <h2 class="float--left">
+          See later
+          <span id="seelater-count" class="series-count"></span>
+        </h2>
+      </a>
+      <ul id="seelater"></ul>
+    </section>
+    <section>
+      <a href="#favorite" class="expand">
+        <h2 class="float--left">
+          Favorite
+          <span id="favorite-count" class="series-count"></span>
+        </h2>
+      </a>
+      <ul id="favorite"></ul>
+    </section>
+    <section>
+      <a href="#completed" class="expand">
+        <h2 class="float--left">
+          Completed
+          <span id="completed-count" class="series-count"></span>
+        </h2>
+      </a>
+      <ul id="completed"></ul>
+    </section>
+  </main>
+  <footer>
+    <small>AniLinkz Tracker Chrome Extension - MIT License - 2017 - <a href="https://github.com/jonathanargentiero/anilinkz-tracker" target="_blank" rel="noopener noreferrer">Github</a></small>
+  </footer>
+  <script src="dashboard.js"></script>
+  <script src="ga.js"></script>
+</body>
+</html>

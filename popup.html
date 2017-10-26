@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AniLinkz Tracker Chrome Extension Popup</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <article id="no-content" hidden>
+      <h4>Your anime views will be available right after visiting <a href="http://www.anilinkz.to" target="_blank" rel="noopener noreferrer">AniLinkz website</a>.</h4>
+    </article>
+    <article id="content" hidden>
+      <section>
+        <h2 class="float--left">Recent episodes</h2>
+        <ul class="clear" id="recent-episodes"></ul>
+      </section>
+      <section>
+        <h2 class="float--left">Recent series</h2>
+        <ul class="clear" id="recent-series"></ul>
+      </section>
+      <section>
+        <h4 class="float--left">See later</h4>
+        <ul class="clear" id="seelater"></ul>
+      </section>
+      <a id="dashboard-link" class="link-view-all" href="#">view all</a>
+    </article>
+  </main>
+  <script src="popup.js"></script>
+  <script src="ga.js"></script>
+</body>
+</html>

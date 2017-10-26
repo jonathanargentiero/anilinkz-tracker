@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "AniLinkz Tracker",
+  "description": "This extension allows the user to track episodes and series viewed on AniLinkz anime streaming website.",
+  "homepage_url": "https://github.com/jonathanargentiero/anilinkz-tracker",
+  "version": "1.0.1",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "options_page": "options.html",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://anilinkz.to/*",
+        "http://anilinkz.to/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "browser_action": {
+    "default_icon": "favicon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage"
+  ]
+}
