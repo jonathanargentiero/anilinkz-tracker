@@ -1,6 +1,6 @@
 {
   "name": "anilinkz-tracker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Chrome extension to track episodes you watch on Anilinkz Anime Stream website",
   "author": {
     "name": "Jonathan Argentiero",
@@ -19,8 +19,8 @@
     "eslint-plugin-import": "^2.7.0"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/jonathanargentiero/anilinkz-tracker.git"
+    "type": "git",
+    "url": "https://github.com/jonathanargentiero/anilinkz-tracker.git"
   },
   "bugs": {
     "url": "https://github.com/jonathanargentiero/anilinkz-tracker/issues"
