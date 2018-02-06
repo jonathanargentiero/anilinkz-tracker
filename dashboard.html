@@ -13,45 +13,55 @@
     </picture>
     <h1>AniLinkz Tracker</h1>
   </header>
-  <main>
-    <section>
-      <a href="#recent-episodes" class="expand active">
-        <h2 class="float--left">Recent episodes</h2>
-      </a>
-      <ul id="recent-episodes"></ul>
-    </section>
-    <section>
-      <a href="#recent-series" class="expand active">
-        <h2 class="float--left">Series</h2>
-      </a>
-      <ul id="series"></ul>
-    </section>
-    <section>
-      <a href="#seelater" class="expand">
-        <h2 class="float--left">
+  <nav>
+    <ul>
+      <li>
+        <a href="#series" class="expand active">
+          Series
+          <span id="series-count" class="series-count"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#recent-episodes" class="expand">
+          Recent episodes
+          <span id="recent-count" class="series-count"></span>
+        </a>
+      </li>
+      <li>
+        <a href="#seelater" class="expand">
           See later
           <span id="seelater-count" class="series-count"></span>
-        </h2>
-      </a>
-      <ul id="seelater"></ul>
-    </section>
-    <section>
-      <a href="#favorite" class="expand">
-        <h2 class="float--left">
+        </a>
+      </li>
+      <li>
+        <a href="#favorite" class="expand">
           Favorite
           <span id="favorite-count" class="series-count"></span>
-        </h2>
-      </a>
-      <ul id="favorite"></ul>
-    </section>
-    <section>
-      <a href="#completed" class="expand">
-        <h2 class="float--left">
+        </a>
+      </li>
+      <li>
+        <a href="#completed" class="expand">
           Completed
           <span id="completed-count" class="series-count"></span>
-        </h2>
-      </a>
-      <ul id="completed"></ul>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <section id="series" class="block active">
+      <ul id="series-list"></ul>
+    </section>
+    <section id="recent-episodes" class="block">
+      <ul id="recent-episodes-list"></ul>
+    </section>
+    <section id="seelater" class="block">
+      <ul id="seelater-list"></ul>
+    </section>
+    <section id="favorite" class="block">
+      <ul id="favorite-list"></ul>
+    </section>
+    <section id="completed" class="block">
+      <ul id="completed-list"></ul>
     </section>
   </main>
   <footer>

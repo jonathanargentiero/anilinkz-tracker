@@ -91,7 +91,8 @@ const renderLists = (sortedUserData) => {
       </li>
     `;
   });
-  document.getElementById('recent-episodes').innerHTML = recentEpisodesMarkup ? recentEpisodesMarkup.join('') : '';
+  document.getElementById('recent-episodes-list').innerHTML = recentEpisodesMarkup ? recentEpisodesMarkup.join('') : '';
+  document.getElementById('recent-count').innerHTML = `(${recentEpisodesMarkup.length})`;
   // build recent series list
   const seriesMarkup = Object.keys(userData.SERIES).map((seriesId) => {
     const series = userData.SERIES[seriesId];
@@ -109,7 +110,8 @@ const renderLists = (sortedUserData) => {
       </li>
     `;
   });
-  document.getElementById('series').innerHTML = seriesMarkup ? seriesMarkup.join('') : '';
+  document.getElementById('series-list').innerHTML = seriesMarkup ? seriesMarkup.join('') : '';
+  document.getElementById('series-count').innerHTML = `(${seriesMarkup.length})`;
   // build see later list
   const seeLaterMarkup = seelater.map((seriesId) => {
     const series = userData.SERIES[seriesId];
@@ -125,7 +127,7 @@ const renderLists = (sortedUserData) => {
       </li>
     `;
   });
-  document.getElementById('seelater').innerHTML = seeLaterMarkup ? seeLaterMarkup.join('') : '';
+  document.getElementById('seelater-list').innerHTML = seeLaterMarkup ? seeLaterMarkup.join('') : '';
   document.getElementById('seelater-count').innerHTML = `(${seeLaterMarkup.length})`;
   // build see later list
   const favoriteMarkup = favorite.map((seriesId) => {
@@ -142,7 +144,7 @@ const renderLists = (sortedUserData) => {
       </li>
     `;
   });
-  document.getElementById('favorite').innerHTML = favoriteMarkup ? favoriteMarkup.join('') : '';
+  document.getElementById('favorite-list').innerHTML = favoriteMarkup ? favoriteMarkup.join('') : '';
   document.getElementById('favorite-count').innerHTML = `(${favoriteMarkup.length})`;
   // build see later list
   const completedMarkup = completed.map((seriesId) => {
@@ -159,7 +161,7 @@ const renderLists = (sortedUserData) => {
       </li>
     `;
   });
-  document.getElementById('completed').innerHTML = completedMarkup ? completedMarkup.join('') : '';
+  document.getElementById('completed-list').innerHTML = completedMarkup ? completedMarkup.join('') : '';
   document.getElementById('completed-count').innerHTML = `(${completedMarkup.length})`;
   // activate listeners on icons click
   document.querySelectorAll('.icon').forEach((toggleIcon) => {
@@ -193,9 +195,11 @@ const activateExpandable = () => {
   document.querySelectorAll('.expand').forEach((element) => {
     element.onclick = (e) => {
       e.preventDefault();
-      element.className = element.className.indexOf('active') >= 0 ?
-        'expand' :
-        'expand active';
+      document.querySelector('.expand.active').className = 'expand';
+      element.className = 'expand active';
+      const targetId = element.getAttribute('href').slice(1);
+      document.querySelector('.block.active').className = 'block';
+      document.getElementById(targetId).className = 'block active';
     };
   });
 };
