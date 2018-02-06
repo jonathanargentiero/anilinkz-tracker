@@ -77,7 +77,7 @@ p {
     word-spacing: 0.05em;
 }
 
-a, a:visited {
+a {
   text-decoration: none;
   color: #34495e;
   transition: color 0.5s ease;
@@ -92,11 +92,11 @@ img {
 }
 
 .float--left {
-  float: left;
+  float: left !important;
 }
 
 .float--right {
-  float: right;
+  float: right !important;
 }
 
 .clear {
@@ -180,6 +180,8 @@ h3 + .link-view-all, h4 + .link-view-all {
 .icon-favorite,
 .icon-seelater,
 .icon-completed,
+.icon-control-panel,
+.icon-settings,
 .icon-cancel {
   display: block;
   width: 25px;
@@ -228,6 +230,20 @@ h3 + .link-view-all, h4 + .link-view-all {
   background-image: url('icons/cancel.png');
 }
 
+.icon-control-panel {
+  width: 24px;
+  height: 24px;
+  margin: 0.5rem -0.5rem -0.75rem 0;
+  background-image: url('icons/control-panel.png');
+}
+
+.icon-settings {
+  width: 20px;
+  height: 20px;
+  margin: 0.6rem -0.5rem -0.75rem 0.75rem;
+  background-image: url('icons/settings.png');
+}
+
 .icon-favorite:hover,
 .icon-favorite-active {
   background-image: url('icons/favorite-active.png');
@@ -248,6 +264,16 @@ h3 + .link-view-all, h4 + .link-view-all {
   background-image: url('icons/cancel-active.png');
 }
 
+.icon-control-panel:hover,
+.icon-control-panel-active {
+  background-image: url('icons/control-panel-active.png');
+}
+
+.icon-settings:hover,
+.icon-settings-active {
+  background-image: url('icons/settings-active.png');
+}
+
 nav {
   display: block;
   padding: 0;
@@ -264,13 +290,15 @@ nav > ul {
   width: 100%;
 }
 
-.expand {
+.expand,
+.expand--external {
   display: block;
   padding: 1rem 2rem;
   color: white;
 }
 
-.expand:hover {
+.expand:hover,
+.expand--external:hover {
   color: #34495e;
 }
 

@@ -42,9 +42,11 @@ const activateExpandable = () => {
   document.querySelectorAll('.expand').forEach((element) => {
     element.onclick = (e) => {
       e.preventDefault();
-      element.className = element.className.indexOf('active') >= 0 ?
-        'expand' :
-        'expand active';
+      document.querySelector('.expand.active').className = 'expand';
+      element.className = 'expand active';
+      const targetId = element.getAttribute('href').slice(1);
+      document.querySelector('.block.active').className = 'block';
+      document.getElementById(targetId).className = 'block active';
     };
   });
 };

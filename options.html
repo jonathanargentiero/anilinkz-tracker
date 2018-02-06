@@ -13,12 +13,23 @@
     </picture>
     <h1>AniLinkz Tracker</h1>
   </header>
+  <nav>
+      <ul>
+        <li>
+          <a href="#options" class="expand active">
+            Options
+          </a>
+        </li>
+        <li>
+          <a href="#utilities" class="expand">
+            Utilities
+          </a>
+        </li>
+      </ul>
+    </nav>
   <main>
-    <section>
-      <a href="#options" class="expand active">
-        <h2 class="float--left">Options</h2>
-      </a>
-      <ul id="options" class="options">
+    <section id="options" class="block active">
+      <ul class="options">
         <li>
            <label>History length</label>
            <p><small>Define the maximum number of history entries to be saved.</small></p>
@@ -31,11 +42,8 @@
         </li>
       </ul>
     </section>
-    <section>
-      <a href="#utilities" class="expand active">
-        <h2 class="float--left">Utilities</h2>
-      </a>
-      <ul id="utilities" class="options">
+    <section id="utilities" class="block">
+      <ul class="options">
         <li>
            <label>Import/export saved data</label>
            <p><small>
