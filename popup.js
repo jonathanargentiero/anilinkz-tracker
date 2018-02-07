@@ -5,7 +5,7 @@ largeSync=function(){function a(a,b){"undefined"==typeof b&&(b=s);for(var d=f(a)
 const userData = {
   OPTIONS: {
     HISTORY_LENGTH: 20,
-    POPUP_HISTORY_LENGTH: 5,
+    POPUP_HISTORY_LENGTH: 3,
   },
   HISTORY: [],
   SERIES: {},
