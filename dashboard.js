@@ -100,18 +100,41 @@ const renderLists = (sortedUserData) => {
   // build recent series list
   const seriesMarkup = Object.keys(userData.SERIES).map((seriesId) => {
     const series = userData.SERIES[seriesId];
+    const date = new Intl.DateTimeFormat(locale, {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: false,
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }).format(new Date(series.lastVisit));
     return `
-      <li class="episode">
-        <div class="episode-series-title">
+      <tr class="episode">
+        <td class="episode-series-title">
           <a class="episode-series-link" href="${series.seriesUrl}" target="_blank" rel="noopener noreferrer">
             ${series.seriesTitle}
           </a>
-        </div>
-        <a href="#" data-icon-id="favorite" data-series-id="${seriesId}" title="favorite series" class="icon icon-favorite ${series.favorite ? 'icon-favorite-active' : ''}">favorite</a>
-        <a href="#" data-icon-id="seelater" data-series-id="${seriesId}" title="see later series" class="icon icon-seelater ${series.seelater ? 'icon-seelater-active' : ''}">seelater</a>
-        <a href="#" data-icon-id="completed" data-series-id="${seriesId}" title="completed series" class="icon icon-completed ${series.completed ? 'icon-completed-active' : ''}">completed</a>
-        <div class="clear"></div>
-      </li>
+        </td>
+        <td sorttable_customkey="${new Date(series.lastVisit).getTime()}">
+          ${series.episodeTitle ? `
+            <a class="episode-series-link" href="${series.episodeUrl}" target="_blank" rel="noopener noreferrer">
+              ${series.episodeTitle}
+            </a>
+            <span class="episode-date">${date}</span>
+            ` : ''}
+        </td>
+        <td align="center">
+          <a href="#" data-icon-id="favorite" data-series-id="${seriesId}" title="favorite this series" class="icon icon-favorite ${series.favorite ? 'icon-favorite-active' : ''}">${series.favorite}</a>
+        </td>
+        <td align="center">
+          <a href="#" data-icon-id="seelater" data-series-id="${seriesId}" title="see later this series" class="icon icon-seelater ${series.seelater ? 'icon-seelater-active' : ''}">${series.seelater}</a>
+        </td>
+        <td align="center">
+          <a href="#" data-icon-id="completed" data-series-id="${seriesId}" title="completed this series" class="icon icon-completed ${series.completed ? 'icon-completed-active' : ''}">${series.completed}</a>
+        </td>
+      </tr>
     `;
   });
   document.getElementById('series-list').innerHTML = seriesMarkup ? seriesMarkup.join('') : '';
