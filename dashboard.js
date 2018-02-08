@@ -112,8 +112,8 @@ const renderLists = (sortedUserData) => {
     }).format(new Date(series.lastVisit));
     return `
       <tr class="episode">
-        <td class="episode-series-title">
-          <a class="episode-series-link" href="${series.seriesUrl}" target="_blank" rel="noopener noreferrer">
+        <td>
+          <a class="episode-series-title episode-series-link" href="${series.seriesUrl}" target="_blank" rel="noopener noreferrer">
             ${series.seriesTitle}
           </a>
         </td>

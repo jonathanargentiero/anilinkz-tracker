@@ -291,7 +291,8 @@ table.sortable {
 table.sortable td,
 table.sortable th {
   padding: 0.25rem 0.5rem;
-  height: 2rem;
+  height: 2.5rem;
+  vertical-align: middle;
 }
 
 table.sortable th {
@@ -305,6 +306,10 @@ table.sortable tr:first-child td {
 
 table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
   content: " \25B4\25BE" 
+}
+
+table.sortable tbody tr:nth-child(2n) td {
+  background: #f6f6f6;
 }
 
 nav > ul {
