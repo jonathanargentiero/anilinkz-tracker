@@ -164,15 +164,14 @@ const renderLists = (sortedUserData) => {
   document.getElementById('series').innerHTML = seriesTableMarkup;
   document.getElementById('series-count').innerHTML = `(${seriesMarkup.length})`;
   // sort with sorttable
-  var seriesTable = document.getElementById('series-table');
-  sorttable.makeSortable(seriesTable);
-  var seriesTableHeaders = seriesTable.querySelectorAll('th');
-  const isSorted = false;
+  const seriesTable = document.getElementById('series-table');
+  window.sorttable.makeSortable(seriesTable);
+  const seriesTableHeaders = seriesTable.querySelectorAll('th');
   seriesTableHeaders.forEach((header, i) => {
     header.onclick = () => {
       localStorage.setItem('seriesSortColumn', i);
       localStorage.setItem('seriesSortType', header.className);
-    }
+    };
   });
   const seriesSortColumnIndex = localStorage.getItem('seriesSortColumn') || 0;
   const seriesSortType = localStorage.getItem('seriesSortType') || '';
@@ -180,16 +179,16 @@ const renderLists = (sortedUserData) => {
   if (seriesSortType.indexOf('sorttable_sorted_reverse') >= 0) {
     // is sort desc
     // invoke the function twice on the header to simulate the desc sort
-    sorttable.innerSortFunction.apply(seriesSortColumn, []);
-    sorttable.innerSortFunction.apply(seriesSortColumn, []);
+    window.sorttable.innerSortFunction.apply(seriesSortColumn, []);
+    window.sorttable.innerSortFunction.apply(seriesSortColumn, []);
   } else if (seriesSortType.indexOf('sorttable_sorted') >= 0) {
     // is sort asc
     // invoke the function once on the header to simulate the asc sort
-    sorttable.innerSortFunction.apply(seriesSortColumn, []);
+    window.sorttable.innerSortFunction.apply(seriesSortColumn, []);
   } else {
     // fallback
     // asc sort on the first column
-    sorttable.innerSortFunction.apply(seriesSortColumn, []);
+    window.sorttable.innerSortFunction.apply(seriesSortColumn, []);
   }
   // build see later list
   const seeLaterMarkup = seelater.map((seriesId) => {

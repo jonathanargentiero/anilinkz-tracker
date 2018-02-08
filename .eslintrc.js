@@ -8,7 +8,7 @@ module.exports = {
       "chrome": true,
     },
     "rules": {
-      "max-len": 150,
+      "max-len": "off",
       "no-alert": "off",
       "no-param-reassign": "off",
       "no-plusplus": "off"
