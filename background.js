@@ -78,7 +78,7 @@ function updateEpisode(requestData) {
     lastVisit,
   };
   const latestHistoryItem = userData.HISTORY[0];
-  if (!latestHistoryItem || latestHistoryItem.episodeTitle !== historyData.episodeTitle) {
+  if (!latestHistoryItem || latestHistoryItem.seriesId !== historyData.seriesId || latestHistoryItem.episodeTitle !== historyData.episodeTitle) {
     userData.HISTORY.unshift(historyData);
     if (userData.HISTORY.length > userData.OPTIONS.HISTORY_LENGTH) {
       userData.HISTORY = userData.HISTORY.slice(0, userData.OPTIONS.HISTORY_LENGTH);
