@@ -112,7 +112,7 @@ const renderLists = (sortedUserData) => {
     }).format(new Date(series.lastVisit));
     return `
       <tr class="episode">
-        <td>
+        <td sorttable_customkey="${seriesId}">
           <a class="episode-series-title episode-series-link" href="${series.seriesUrl}" target="_blank" rel="noopener noreferrer">
             ${series.seriesTitle}
           </a>
@@ -125,20 +125,72 @@ const renderLists = (sortedUserData) => {
             <span class="episode-date">${date}</span>
             ` : ''}
         </td>
-        <td align="center">
+        <td sorttable_customkey="${series.favorite ? 1 : 0}">
           <a href="#" data-icon-id="favorite" data-series-id="${seriesId}" title="favorite this series" class="icon icon-favorite ${series.favorite ? 'icon-favorite-active' : ''}">${series.favorite}</a>
         </td>
-        <td align="center">
+        <td sorttable_customkey="${series.seelater ? 1 : 0}">
           <a href="#" data-icon-id="seelater" data-series-id="${seriesId}" title="see later this series" class="icon icon-seelater ${series.seelater ? 'icon-seelater-active' : ''}">${series.seelater}</a>
         </td>
-        <td align="center">
+        <td sorttable_customkey="${series.completed ? 1 : 0}">
           <a href="#" data-icon-id="completed" data-series-id="${seriesId}" title="completed this series" class="icon icon-completed ${series.completed ? 'icon-completed-active' : ''}">${series.completed}</a>
         </td>
       </tr>
     `;
   });
-  document.getElementById('series-list').innerHTML = seriesMarkup ? seriesMarkup.join('') : '';
+  const seriesTableMarkup = `<table id="series-table" class="sortable" width="100%">
+    <thead>
+      <tr align="left">
+        <th>
+          Name
+        </th>
+        <th>
+          Last viewed
+        </th>
+        <th>
+          Favorite
+        </th>
+        <th>
+          See later
+        </th>
+        <th>
+          Completed
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      ${seriesMarkup ? seriesMarkup.join('') : ''}
+    </tbody>
+  </table>`;
+  document.getElementById('series').innerHTML = seriesTableMarkup;
   document.getElementById('series-count').innerHTML = `(${seriesMarkup.length})`;
+  // sort with sorttable
+  var seriesTable = document.getElementById('series-table');
+  sorttable.makeSortable(seriesTable);
+  var seriesTableHeaders = seriesTable.querySelectorAll('th');
+  const isSorted = false;
+  seriesTableHeaders.forEach((header, i) => {
+    header.onclick = () => {
+      localStorage.setItem('seriesSortColumn', i);
+      localStorage.setItem('seriesSortType', header.className);
+    }
+  });
+  const seriesSortColumnIndex = localStorage.getItem('seriesSortColumn') || 0;
+  const seriesSortType = localStorage.getItem('seriesSortType') || '';
+  const seriesSortColumn = seriesTableHeaders[seriesSortColumnIndex];
+  if (seriesSortType.indexOf('sorttable_sorted_reverse') >= 0) {
+    // is sort desc
+    // invoke the function twice on the header to simulate the desc sort
+    sorttable.innerSortFunction.apply(seriesSortColumn, []);
+    sorttable.innerSortFunction.apply(seriesSortColumn, []);
+  } else if (seriesSortType.indexOf('sorttable_sorted') >= 0) {
+    // is sort asc
+    // invoke the function once on the header to simulate the asc sort
+    sorttable.innerSortFunction.apply(seriesSortColumn, []);
+  } else {
+    // fallback
+    // asc sort on the first column
+    sorttable.innerSortFunction.apply(seriesSortColumn, []);
+  }
   // build see later list
   const seeLaterMarkup = seelater.map((seriesId) => {
     const series = userData.SERIES[seriesId];
