@@ -95,15 +95,15 @@ const renderLists = (sortedUserData) => {
   const recentSeriesMarkup = recentSeries.map((seriesId) => {
     const series = userData.SERIES[seriesId];
     return `
-      <li class="episode">
-        <div class="episode-series-title">
+      <li class="episode episode--small">
+        <div class="episode-series-title float--left">
           <a class="episode-series-link" href="${series.seriesUrl}" target="_blank" rel="noopener noreferrer">
             ${series.seriesTitle}
           </a>
         </div>
-        <a href="#" data-icon-id="favorite" data-series-id="${seriesId}" title="favorite series" class="icon icon-favorite ${series.favorite ? 'icon-favorite-active' : ''}">favorite</a>
-        <a href="#" data-icon-id="seelater" data-series-id="${seriesId}" title="see later series" class="icon icon-seelater ${series.seelater ? 'icon-seelater-active' : ''}">seelater</a>
-        <a href="#" data-icon-id="completed" data-series-id="${seriesId}" title="completed series" class="icon icon-completed ${series.completed ? 'icon-completed-active' : ''}">completed</a>
+        <a href="#" data-icon-id="completed" data-series-id="${seriesId}" title="completed series" class="icon icon-completed ${series.completed ? 'icon-completed-active' : ''} float--right">completed</a>
+        <a href="#" data-icon-id="seelater" data-series-id="${seriesId}" title="see later series" class="icon icon-seelater ${series.seelater ? 'icon-seelater-active' : ''} float--right">seelater</a>
+        <a href="#" data-icon-id="favorite" data-series-id="${seriesId}" title="favorite series" class="icon icon-favorite ${series.favorite ? 'icon-favorite-active' : ''} float--right">favorite</a>
         <div class="clear"></div>
       </li>
     `;

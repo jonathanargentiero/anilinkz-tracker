@@ -269,6 +269,12 @@ h3 + .link-view-all, h4 + .link-view-all {
   background-image: url('icons/settings-active.png');
 }
 
+.episode--small > .icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin: -0.3rem 0.35rem 0;
+}
+
 nav {
   display: block;
   padding: 0;
