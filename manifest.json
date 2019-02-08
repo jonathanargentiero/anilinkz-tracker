@@ -17,7 +17,9 @@
     {
       "matches": [
         "https://anilinkz.to/*",
-        "http://anilinkz.to/*"
+        "http://anilinkz.to/*",
+        "https://aniwatcher.com/*",
+        "http://aniwatcher.com/*"
       ],
       "js": ["content.js"],
       "run_at": "document_end"

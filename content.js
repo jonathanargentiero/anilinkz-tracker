@@ -1,7 +1,7 @@
 // store visit
 if (window.location.pathname.indexOf('series') >= 0) {
   // series page:
-  // http://anilinkz.to/series/shokugeki-no-souma?page=2
+  // https://aniwatcher.com/series/shokugeki-no-souma?page=2
   const hrefSplitted = window.location.pathname.split('/');
   const seriesId = hrefSplitted[hrefSplitted.length - 1];
   const seriesTitle = document.title.replace(' Episodes', '');
@@ -15,8 +15,8 @@ if (window.location.pathname.indexOf('series') >= 0) {
   });
 } else {
   // episode page:
-  // http://anilinkz.to/shokugeki-no-souma-episode-18
-  // http://anilinkz.to/shokugeki-no-souma-ova-2
+  // https://aniwatcher.com/shokugeki-no-souma-episode-18
+  // https://aniwatcher.com/shokugeki-no-souma-ova-2
   let disableTracking = false;
   const seriesLink = document.querySelector('#nextprevlist li.center a');
   if (seriesLink) {
